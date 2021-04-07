@@ -1,5 +1,6 @@
 <?php
-require_once 'connectdb.php';
+include 'template/header.html';
+require_once 'connectdb.php';;
 $id = "";
 $username = "";
 $status = "";
@@ -31,16 +32,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
 <body>
     <form action="update.php?id=<?= $id ?>" method="post">
         <table border="1">
@@ -56,6 +47,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <td colspan="2"><input type="submit" value="save"></td>
             </tr>
         </table>
+        <a href='insert.php'>เพิ่มผู้ใช้</a>
+    <?php
+    include 'template/header.html';
+    ?>
     </form>
 </body>
 

@@ -1,7 +1,6 @@
 <?php
+
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
-
-
 $id = "";
 if(isset($_GET["id"]) && $_GET["id"] != ''){
     $id = $_GET["id"];

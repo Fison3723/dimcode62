@@ -1,14 +1,6 @@
 <?php
-$dbhost = 'localhost';
-$dbuser = 'root';
-$dbpass = '';
-$dbname = 'codephp62';
-
-$myconn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
-if ($myconn->connect_errno) {
-    printf("Connect failed: %s\n", $myconn->connect_error);
-    exit();
-}
+include 'template/header.html';
+require_once 'connectdb.php';
 
 $frmUsername = $frmPassword = "";
 
@@ -27,35 +19,25 @@ if ($frmUsername && $frmPassword); {
     }
 }
 
-
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
 
 <body>
     <form action="insert.php" method="post">
-        <table border="10">
-            <tr>
-                <td>username</td>
-                <td><input type="text" name="username" id="username"></td>
-            </tr>
-            <tr>
-                <td>password</td>
-                <td><input type="password" name="password" id="password"></td>
-            </tr>
-            <tr>
-                <td colspan="2"><input type="submit" value="save"></td>
-            </tr>
-        </table>
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="username">
+            <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
+            <label for="floatingPassword">Password</label>
+        </div>
+        <button type="submit" class="btn btn-primary">save</button>
     </form>
+    <?php
+    include 'template/header.html';
+    ?>
 </body>
 
 </html>
